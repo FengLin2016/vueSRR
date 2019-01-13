@@ -28,7 +28,7 @@ export default context => {
                   datas = {}
                 }
                 let obj = Object.assign(datas, res)
-                componentData[componented.options.__file] = obj
+                componentData[context.url+''] = obj
                 componented.options.data = function () {
                   return obj
                 }

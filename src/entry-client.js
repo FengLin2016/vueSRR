@@ -25,9 +25,9 @@ router.afterEach((to, from) => {
       matchedComponents.map(component => {
         let componented = component._Ctor[0]
         if (componented.options.asyncData) {
-          if (componentData[componented.options.__file]) {
+          if (componentData[to.path]) {
             componented.options.data = function () {
-              return componentData[componented.options.__file]
+              return componentData[to.path]
             }
           } else {
             // 客户端路由加载的时候就不会去触发服务端渲染
